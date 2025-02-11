@@ -51,29 +51,29 @@ This project focuses on creating and managing a database, building a schema, and
 3. Search for **"Python: Select Interpreter"**.
 4. Select the `.venv` folder located in the project root directory.
 
-## Git Commands (FYI)
+# Implementing SQ Statements
 
+
+
+
+## Git Commands (FYI)
 Use the following Git commands to manage your project version control:
 
 **Add Changes:**  
 ```
 git add .
 ```
-
 **Commit Changes:**  
 ```
 git commit -m "Your commit message"
 ```
-
 **Push Changes to GitHub:**  
 ```
 git push -u origin main
 ```
-
 **Pull Latest Changes:**  
 ```
 git pull origin main
 ```
 
----
 

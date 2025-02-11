@@ -1,0 +1,1 @@
+# This script will handle reading data from the database.
