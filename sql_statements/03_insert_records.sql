@@ -1,8 +1,9 @@
 -- Insert records into the Authors and Books tables
-INSERT INTO Authors (author_id, author_name, birth_year, nationality) VALUES
-    ('AUTHOR_001', 'J.K. Rowling', 1965, 'British'),
-    ('AUTHOR_002', 'George Orwell', 1903, 'British'),
-    ('AUTHOR_003', 'Harper Lee', 1926, 'American');
+INSERT INTO Authors (author_id, first, last, birth_year, nationality) VALUES
+    ('AUTHOR_001', 'J.K.', 'Rowling', 1965, 'British'),
+    ('AUTHOR_002', 'George', 'Orwell', 1903, 'British'),
+    ('AUTHOR_003', 'Harper', 'Lee', 1926, 'American');
+
 
 INSERT INTO Books (book_id, title, genre, publication_year, author_id) VALUES
     ('BOOK_001', "Harry Potter and the Sorcerer's Stone", 'Fantasy', 1997, 'AUTHOR_001'),

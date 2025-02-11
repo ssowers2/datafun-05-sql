@@ -1,7 +1,8 @@
 -- Create two related tables
 CREATE TABLE Authors (
     author_id TEXT PRIMARY KEY,
-    author_name TEXT NOT NULL,
+    first TEXT NOT NULL,
+    last TEXT NOT NULL,
     birth_year INT,
     nationality TEXT
 );
