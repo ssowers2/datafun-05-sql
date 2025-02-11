@@ -77,5 +77,3 @@ git pull origin main
 
 ---
 
-Document your commands, process, and notes as you progress through the project.
-
