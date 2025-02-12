@@ -1,17 +1,16 @@
 # DataFun-05-SQL
-
 This project focuses on creating and managing a database, building a schema, and executing various SQL operations, including queries with joins, filters, and aggregations.
 
 ## Project Setup
 
-### Step 1: Initialize Repository
+## Step 1: Initialize Repository
 1. Create a new GitHub repository named **datafun-05-sql** with a default `README.md`.
 2. Clone the repository to your local machine in the **Projects** folder.
 3. Open the project folder in **VS Code**.
 
 ## Essential Files
 
-### Step 2: Add Key Files
+## Step 2: Add Key Files
 1. **.gitignore**  
    Add a `.gitignore` file to specify files and folders to exclude from version control. You can reference an existing `.gitignore` template for Python projects.
 
@@ -23,57 +22,73 @@ This project focuses on creating and managing a database, building a schema, and
 
 ## Virtual Environment Setup
 
-### Step 3: Create and Activate Virtual Environment
-1. **Create a Virtual Environment:**  
-   ```
+## Step 3: Create and Activate Virtual Environment
+1. **Create a Virtual Environment:**
+
+   ```Windows PowerShell
    python -m venv .venv
-   ```
 
-2. **Activate the Virtual Environment:**  
-   - **Windows:**  
-     ```
-     .\.venv\Scripts\activate
-     ```
+## Activate the Virtual Environment:
+.\.venv\Scripts\activate
 
-## Install Dependencies
+## Step 4: Install Required Packages
+pip install -r requirements.txt
 
-### Step 4: Install Required Packages
-1. Run the following command to install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+## Step 5: Select Python Interpreter in VS Code
+1. Ensure VS Code is set to use the .venv environment.
+2. Open the command palette using Ctrl + Shift + P.
+3. Search for "Python: Select Interpreter".
+4. Select the .venv folder located in the project root directory.
 
-## Configure VS Code
+## Step 1: Create a New Database
+1. Create a new SQLite database file (e.g., book_db.sqlite).
 
-### Step 5: Select Python Interpreter in VS Code
-1. Ensure VS Code is set to use the `.venv` environment.
-2. Open the command palette using `Ctrl + Shift + P`.
-3. Search for **"Python: Select Interpreter"**.
-4. Select the `.venv` folder located in the project root directory.
+## Step 2: Create SQL Files
+1. drop_tables.sql: Contains SQL statements to drop existing tables.
+2. create_tables.sql: Contains SQL statements to create new tables.
+3. insert_data.sql: Contains SQL statements to insert data into the tables.
 
-# Implementing SQ Statements
+## Step 3: Create Python Script
+1. Write a Python script to execute the SQL statements from the files above. Example script name: db01_setup.py.
+2. import sqlite3
 
+## Connect to SQLite database (it will be created if it doesn't exist)
+conn = sqlite3.connect('book_db.sqlite')
+cursor = conn.cursor()
 
+## Function to execute SQL files
+def execute_sql_file(filename):
+    with open(filename, 'r') as file:
+        sql_script = file.read()
+    cursor.executescript(sql_script)
 
+## Drop existing tables
+Keep sql files in their own folder
+execute_sql_file('drop_tables.sql')
 
-## Git Commands (FYI)
-Use the following Git commands to manage your project version control:
+## Create new tables
+execute_sql_file('create_tables.sql')
 
-**Add Changes:**  
-```
+## Insert data into tables
+execute_sql_file('insert_data.sql')
+
+### Commit changes and close connection
+conn.commit()
+conn.close()
+
+## Step 4: Run the Python Script
+py db01_setup.py
+1. This command will execute the script, which will drop existing tables, create new ones, and insert the specified data into the database.
+
+# Git Commands (FYI)
+## Add Changes:
 git add .
-```
-**Commit Changes:**  
-```
+
+## Commit Changes:
 git commit -m "Your commit message"
-```
-**Push Changes to GitHub:**  
-```
+
+## Push Changes to GitHub:
 git push -u origin main
-```
-**Pull Latest Changes:**  
-```
+
+## Pull Latest Changes:
 git pull origin main
-```
-
-
