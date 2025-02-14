@@ -72,13 +72,28 @@ execute_sql_file('create_tables.sql')
 ## Insert data into tables
 execute_sql_file('insert_data.sql')
 
-### Commit changes and close connection
+## Commit changes and close connection
 conn.commit()
 conn.close()
 
 ## Step 4: Run the Python Script
 py db01_setup.py
 1. This command will execute the script, which will drop existing tables, create new ones, and insert the specified data into the database.
+
+## Importing CSV Data into SQLite
+## Prerequisites
+- SQLite installed (`sqlite3.exe` in `C:\SQLite\`)
+- CSV files (`authors.csv` and `books.csv`) stored in `data/` folder
+- An SQLite database file (e.g., `csv_db.sqlite`)
+---
+### Open SQLite in VS Code Terminal and Run Below Commands
+1. C:\SQLite\sqlite3.exe C:/projects/datafun-05-sql/csv_db.sqlite
+2. .mode csv (Tells SQLite to expect CSV-formatted data)
+3. .import C:/projects/datafun-05-sql/data/authors.csv Authors (imports this file data to db)
+4. .import C:/projects/datafun-05-sql/data/books.csv Books (imports this file data to db)
+5. Verify data uploaded by testing each: SELECT * FROM Authors LIMIT 5; SELECT * FROM Books LIMIT 5;
+6. Open db is VS Code, if data isn't showing click refresh button, data should appear
+7. To leave SQLite command: .exit
 
 # Git Commands (FYI)
 ## Add Changes:
