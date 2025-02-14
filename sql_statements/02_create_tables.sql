@@ -3,8 +3,9 @@ CREATE TABLE Authors (
     author_id TEXT PRIMARY KEY,
     first TEXT NOT NULL,
     last TEXT NOT NULL,
-    birth_year INT,
-    nationality TEXT
+    age INT,
+    nationality TEXT,
+    years_as_author INT
 );
 
 CREATE TABLE Books (
